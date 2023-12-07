@@ -37,8 +37,8 @@ export class AuthService {
     return `This action removes a #${id} auth`;
   }
 
-  async signIn(email: string, password: string): Promise<any> {
-    const user: UserWithoutPassword = await this.validate(email,password);
+  async signIn(createAuthDto : CreateAuthDto){
+    const user: UserWithoutPassword = await this.validate(createAuthDto.email,createAuthDto.password);
      const payload = {
      user
     }
