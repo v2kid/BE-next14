@@ -37,7 +37,7 @@ export class ProductController {
     return this.productService.update(id, updateProductDto);
   }
 
-  @Delete('id')
+  @Delete(':id')
   @UseGuards(AuthGuard)
   @Roles(Role.Admin)
   remove(@Param('id') id: string) {
