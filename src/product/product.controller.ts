@@ -2,12 +2,14 @@ import { Controller, Get, Post, Body, Patch, Param, Delete, Put, Query, UseGuard
 import { ProductService } from './product.service';
 import { CreateProductDto } from './dto/create-product.dto';
 import { UpdateProductDto } from './dto/update-product.dto';
+import { Role } from 'src/role/role.enum';
 import { Roles } from 'src/role/roles.decorator';
 import { AuthGuard } from 'src/auth/auth.guard';
-import { Role } from 'src/role/role.enum';
-
+import { RolesGuard } from 'src/role/role.guard';
 @Controller('product')
+@UseGuards(RolesGuard)
 export class ProductController {
+  
   constructor(private readonly productService: ProductService) {}
 
   @Post()
