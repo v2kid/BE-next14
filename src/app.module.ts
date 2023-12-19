@@ -10,6 +10,7 @@ import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { RolesGuard } from './role/role.guard';
 import { APP_GUARD } from '@nestjs/core';
+import { ContactModule } from './contact/contact.module';
 @Module({
   imports: [
     ConfigModule.forRoot({
@@ -26,6 +27,7 @@ import { APP_GUARD } from '@nestjs/core';
     UsersModule,
     ProductModule,
     AuthModule,
+    ContactModule,
   ],
   controllers: [AppController],
   providers: [AppService,  {

@@ -24,10 +24,17 @@ export class ProductService {
     if(gender==='unisex'){
       gender = ''
     }
+    // const count = await this.productModel.countDocuments({
+    //   gender: new RegExp(gender as string, 'i'),
+    //   category: new RegExp(category as string, 'i'),
+    //   title: new RegExp(keyword as string, 'i'),
+    // }).exec();
+    // const totalPages = Math.ceil(count / perpage);
+
     const data = await this.productModel.find({
       gender : new RegExp (gender as string ,'i'),
       category : new RegExp (category as string ,'i'),
-      title :  new RegExp (keyword as string , 'i')
+      title :  new RegExp (keyword as string , 'i'),
     })
     .skip((page-1)*perpage)
     .limit(perpage as number)
