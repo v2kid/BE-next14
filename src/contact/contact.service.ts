@@ -15,8 +15,9 @@ export class ContactService {
     return contact
   }
 
-  findAll() {
-    return `This action returns all contact`;
+  async findAll() {
+    const contacts = await this.contactModel.find()
+    return contacts;
   }
 
 

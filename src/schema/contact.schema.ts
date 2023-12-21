@@ -14,7 +14,9 @@ export class Contact {
   message : String
   @Prop()
   status : String
-  @Prop({default: now()})
+  @Prop({
+    type : Date,
+    default: now()})
   createdAt: Date;
 }
 
