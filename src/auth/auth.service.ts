@@ -78,6 +78,7 @@ export class AuthService {
      user
     };
     return {
+      user,
       accessToken: await this.jwtService.signAsync(payload, {
         expiresIn: '20s',
         secret: process.env.secret,
